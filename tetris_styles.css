@@ -1,0 +1,20 @@
+#tetris-screen{
+    height: 650px;
+    width: 450px;
+    alignment: center;
+    border: 1px white solid;
+    background-color: black;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+body{
+    background-color: #b001d8;
+}
+#welcome-text{
+    color: white;
+    text-shadow: cadetblue;
+    text-align: center;
+}
