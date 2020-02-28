@@ -2,13 +2,24 @@ let canvas = document.querySelector("#tetris-screen");
 let context = canvas.getContext("2d");
 
 let blockSize = 50;
-
+let blocks = [tBlock,iBlock,lBlock,oBLock];
+let block;
 
 startGame();
+setInterval(updateGame,1000);
 
 function startGame(){
     drawGrid();
-    zBlock()
+    getNewBlock()
+
+}
+
+function getNewBlock() {
+
+    let randomBlock = blocks[Math.floor(Math.random() * blocks.length)];
+
+    block = new randomBlock(150,0);
+
 }
 
 function drawGrid(){
@@ -29,8 +40,12 @@ function drawGrid(){
 
 
 function updateGame (){
+
     clear();
-    drawGrid()
+    drawGrid();
+    block.update();
+    block.yPos += 50;
+
 }
 // setInterval(function () {
 //     context.beginPath();

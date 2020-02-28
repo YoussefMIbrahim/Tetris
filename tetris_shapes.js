@@ -1,82 +1,98 @@
 // this actually works for drawing the L block
-function lBlock (){
-    let yPos = 0;
-    let xPos = 0;
+function lBlock (xPos,yPos){
+    this.xPos = xPos;
+    this.yPos = yPos;
 
-    context.beginPath();
-    context.fillStyle = "blue";
+    this.update = function() {
 
-    for (let x = blockSize; x <= blockSize * 3; x += blockSize){
+        context.beginPath();
+        context.fillStyle = "blue";
 
-        context.fillRect(xPos,yPos,blockSize,blockSize);
+        for (let x = blockSize; x <= blockSize * 3; x += blockSize) {
 
-        if (x === blockSize * 3){
-            context.fillRect(xPos+50,yPos,blockSize,blockSize)
+            context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
+
+            if (x === blockSize * 3) {
+                context.fillRect(this.xPos + 50, this.yPos, blockSize, blockSize)
+            }
+
+            this.yPos += blockSize;
         }
-
-        yPos += blockSize;
+        context.stroke();
+        this.yPos -= blockSize *3;
     }
-    context.stroke()
 }
 //easy enough on this one
-function iBlock() {
-    let yPos = 0;
-    let xPos = 0;
+function iBlock(xPos,yPos) {
 
-    context.beginPath();
-    context.fillStyle = "cyan";
+    this.xPos = xPos;
+    this.yPos = yPos;
 
-    for (let x = blockSize; x <= blockSize * 4; x += blockSize){
+    this.update = function() {
 
-        context.fillRect(xPos,yPos,blockSize,blockSize);
+        context.beginPath();
+        context.fillStyle = "cyan";
 
-        yPos += blockSize;
+        for (let x = blockSize; x <= blockSize * 4; x += blockSize) {
+
+            context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
+
+            this.yPos += blockSize;
+        }
+        context.stroke();
+        this.yPos -= blockSize *4;
+
     }
-    context.stroke()
 }
 
 function tBlock(xPos,yPos) {
 
-     yPos = 0;
-     xPos = 0;
-
+    this.xPos = xPos;
+    this.yPos = yPos;
 
     this.update = function () {
 
         context.beginPath();
         context.fillStyle = "magenta";
 
+
         for (let x = blockSize; x <= blockSize * 3; x += blockSize){
 
-            context.fillRect(xPos,yPos,blockSize,blockSize);
+            context.fillRect(this.xPos,this.yPos,blockSize,blockSize);
 
             if (x === blockSize * 2){
-                context.fillRect(xPos,yPos+blockSize,blockSize,blockSize)
+                context.fillRect(this.xPos,this.yPos + blockSize,blockSize,blockSize)
             }
 
-            xPos += blockSize;
+            this.xPos += blockSize;
         }
         context.stroke();
+
+        this.xPos -= blockSize *3;
 
     }
 }
 
-function oBLock() {
+function oBLock(xPos,yPos) {
 
-    let yPos = 0;
-    let xPos = 0;
+    this.xPos = xPos;
+    this.yPos = yPos;
 
-    context.beginPath();
-    context.fillStyle = "yellow";
+    this.update = function() {
 
-    for (let x = blockSize; x <= blockSize * 2; x += blockSize){
+        context.beginPath();
+        context.fillStyle = "yellow";
 
-        context.fillRect(xPos,yPos,blockSize,blockSize);
-        context.fillRect(xPos+blockSize,yPos,blockSize,blockSize);
+        for (let x = blockSize; x <= blockSize * 2; x += blockSize) {
 
-        yPos += blockSize;
+            context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
+            context.fillRect(this.xPos + blockSize, this.yPos, blockSize, blockSize);
+
+            this.yPos += blockSize;
+        }
+        context.stroke()
+        this.yPos -= blockSize * 2;
     }
-    context.stroke()
 }
 
 function zBlock() {
