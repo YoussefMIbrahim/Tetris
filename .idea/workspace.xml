@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21c397c9-fe51-42e2-baa9-e8d9c4d88774" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Tetris_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tetris_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetris_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/tetris_script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

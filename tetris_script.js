@@ -4,17 +4,43 @@ let context = canvas.getContext("2d");
 let blockSize = 50;
 let blocks = [tBlock,iBlock,lBlock,oBLock,zBlock];
 let block;
+let gameTime = 1000;
+
 
 startGame();
 setInterval(updateGame,1000);
 
 function startGame(){
     drawGrid();
-    getNewBlock()
-
+    getNewBlock();
+    buttonInputs();
 
 }
 
+function buttonInputs() {
+    document.addEventListener('keydown',function (event) {
+        console.log(event);
+        if (event['keyCode'] === 37){
+            block.xPos -= 50;
+            clear();
+            drawGrid();
+            block.update();
+
+        }
+        else if (event['keyCode'] === 39){
+            block.xPos += 50;
+            clear();
+            drawGrid();
+            block.update();
+        }
+        else if (event['keyCode'] === 40){
+            block.yPos += 50;
+            clear();
+            drawGrid();
+            block.update();
+        }
+    })
+}
 function getNewBlock() {
 
     let randomBlock = blocks[Math.floor(Math.random() * blocks.length)];
