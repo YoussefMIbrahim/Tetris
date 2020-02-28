@@ -12,6 +12,7 @@ function startGame(){
     drawGrid();
     getNewBlock()
 
+
 }
 
 function getNewBlock() {
