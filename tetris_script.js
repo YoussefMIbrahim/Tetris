@@ -47,18 +47,10 @@ function updateGame (){
     block.yPos += 50;
 
 }
-// setInterval(function () {
-//     context.beginPath();
-//     let blockDrop = 0;
-//     let test = 0;
-//     context.fillStyle = "red";
-//     for (let i = blockWidth; i < blockWidth * 5; i+= blockWidth ){
-//         context.fillRect(test,blockDrop,blockWidth,blockHeight);
-//         test += blockWidth;
-//     }
-//     blockDrop += blockHeight;
-//     context.stroke();
-// },1000);
+
+function userInput(){
+
+}
 
 
 function clear(){
