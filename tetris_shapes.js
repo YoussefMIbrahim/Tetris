@@ -95,25 +95,30 @@ function oBLock(xPos,yPos) {
     }
 }
 
-function zBlock() {
+function zBlock(xPos,yPos) {
 
-    let yPos = 0;
-    let xPos = 0;
+    this.xPos = xPos;
+    this.yPos = yPos;
 
-    context.beginPath();
-    context.fillStyle = "red";
+    this.update = function() {
 
-    for (let x = blockSize; x <= blockSize * 4; x += blockSize){
+        context.beginPath();
+        context.fillStyle = "red";
 
-        context.fillRect(xPos,yPos,blockSize,blockSize);
+        for (let x = blockSize; x <= blockSize * 4; x += blockSize) {
 
-        if (x === blockSize * 2){
-            yPos += blockSize;
+            context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
 
-        }else {
+            if (x === blockSize * 2) {
+                this.yPos += blockSize;
 
-            xPos += blockSize;
+            } else {
+
+                this.xPos += blockSize;
+            }
         }
+        context.stroke();
+        this.yPos -= blockSize;
+        this.xPos -= blockSize * 3;
     }
-    context.stroke()
 }

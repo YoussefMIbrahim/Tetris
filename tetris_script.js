@@ -2,7 +2,7 @@ let canvas = document.querySelector("#tetris-screen");
 let context = canvas.getContext("2d");
 
 let blockSize = 50;
-let blocks = [tBlock,iBlock,lBlock,oBLock];
+let blocks = [tBlock,iBlock,lBlock,oBLock,zBlock];
 let block;
 
 startGame();
