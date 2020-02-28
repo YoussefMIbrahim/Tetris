@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21c397c9-fe51-42e2-baa9-e8d9c4d88774" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tetris_shapes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tetris_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tetris_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tetris_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/tetris_script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetris_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/tetris_styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582251562633</updated>
       <workItem from="1582251563924" duration="875000" />
-      <workItem from="1582844644313" duration="4845000" />
+      <workItem from="1582844644313" duration="8819000" />
     </task>
     <servers />
   </component>
