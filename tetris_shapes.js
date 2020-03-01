@@ -1,5 +1,5 @@
 // this actually works for drawing the L block
-function lBlock (xPos,yPos){
+function lBlock (xPos, yPos){
     this.xPos = xPos;
     this.yPos = yPos;
 
@@ -7,6 +7,7 @@ function lBlock (xPos,yPos){
 
         context.beginPath();
         context.fillStyle = "blue";
+
 
         for (let x = blockSize; x <= blockSize * 3; x += blockSize) {
 

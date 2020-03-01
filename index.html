@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <title>Superior Tetris</title>
     <script defer async src="tetris_shapes.js"></script>
-    <script defer async src="tetris_script.js"></script>
+    <script defer async src="tetris_script.js" type="module"></script>
     <link rel="stylesheet" href="tetris_styles.css" type="text/css">
 </head>
 <body>
 
     <h1 id="welcome-text">Welcome to better Tetris</h1>
     <audio src="game_music.mp3" autoplay hidden loop></audio>
-    <canvas id="tetris-screen" width="450" height="900" onkeypress=" return userInput(event)"></canvas>
-
+    <canvas id="tetris-screen" width="450" height="900" ></canvas>
 
 </body>
 </html>

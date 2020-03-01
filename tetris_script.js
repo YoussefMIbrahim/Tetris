@@ -1,3 +1,4 @@
+
 let canvas = document.querySelector("#tetris-screen");
 let context = canvas.getContext("2d");
 
@@ -19,7 +20,6 @@ function startGame(){
 
 function buttonInputs() {
     document.addEventListener('keydown',function (event) {
-        console.log(event);
         if (event['keyCode'] === 37){
             block.xPos -= 50;
             clear();
