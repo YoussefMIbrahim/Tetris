@@ -3,7 +3,7 @@ function lBlock (xPos,yPos){
     this.xPos = xPos;
     this.yPos = yPos;
 
-    this.update = function() {
+    this.draw = function() {
 
         context.beginPath();
         context.fillStyle = "blue";
@@ -20,6 +20,15 @@ function lBlock (xPos,yPos){
         }
         context.stroke();
         this.yPos -= blockSize *3;
+
+    };
+    this.update = function () {
+        this.yPos += blockSize;
+    };
+    this.bottom = function () {
+        if (this.yPos >= 750){
+            getNewBlock()
+        }
     }
 }
 //easy enough on this one
@@ -28,7 +37,7 @@ function iBlock(xPos,yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
 
-    this.update = function() {
+    this.draw = function() {
 
         context.beginPath();
         context.fillStyle = "cyan";
@@ -42,6 +51,15 @@ function iBlock(xPos,yPos) {
         context.stroke();
         this.yPos -= blockSize *4;
 
+
+    };
+    this.update = function () {
+        this.yPos += blockSize;
+    }
+    this.bottom = function () {
+        if (this.yPos >= 700){
+            getNewBlock()
+        }
     }
 }
 
@@ -50,7 +68,7 @@ function tBlock(xPos,yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
 
-    this.update = function () {
+    this.draw = function () {
 
         context.beginPath();
         context.fillStyle = "magenta";
@@ -65,11 +83,21 @@ function tBlock(xPos,yPos) {
             }
 
             this.xPos += blockSize;
+
         }
         context.stroke();
 
         this.xPos -= blockSize *3;
 
+    };
+    this.update = function () {
+        this.yPos += blockSize;
+    }
+    this.bottom = function () {
+        if (this.yPos >= 800){
+            console.log(this.y);
+            getNewBlock()
+        }
     }
 }
 
@@ -78,7 +106,7 @@ function oBLock(xPos,yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
 
-    this.update = function() {
+    this.draw = function() {
 
         context.beginPath();
         context.fillStyle = "yellow";
@@ -90,8 +118,17 @@ function oBLock(xPos,yPos) {
 
             this.yPos += blockSize;
         }
-        context.stroke()
+        context.stroke();
         this.yPos -= blockSize * 2;
+
+    };
+    this.bottom = function () {
+        if (this.yPos >= 800){
+            getNewBlock()
+        }
+    }
+    this.update = function () {
+        this.yPos += blockSize;
     }
 }
 
@@ -100,7 +137,7 @@ function zBlock(xPos,yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
 
-    this.update = function() {
+    this.draw = function() {
 
         context.beginPath();
         context.fillStyle = "red";
@@ -120,5 +157,14 @@ function zBlock(xPos,yPos) {
         context.stroke();
         this.yPos -= blockSize;
         this.xPos -= blockSize * 3;
+
+    };
+    this.update = function () {
+        this.yPos += 50;
+    };
+    this.bottom = function () {
+        if (this.yPos >= 800){
+            getNewBlock()
+        }
     }
 }
