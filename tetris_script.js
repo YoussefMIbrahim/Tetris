@@ -3,7 +3,7 @@ let canvas = document.querySelector("#tetris-screen");
 let context = canvas.getContext("2d");
 
 let blockSize = 50;
-let blocks = [tBlock,iBlock,lBlock,oBLock,zBlock];
+let blocks = [iBlock,lBlock];
 let block;
 let gameTime = 1000;
 let blocksSoFar = [];
@@ -22,21 +22,24 @@ function startGame(){
 function buttonInputs() {
     document.addEventListener('keydown',function (event) {
         if (event['keyCode'] === 37){
-            block.xPos -= 50;
-            clear();
-            drawGrid();
-            block.bottom();
-            drawArrayBlocks();
-            block.draw();
-
+            if (checkSideCollisions("LEFT")) {
+                block.xPos -= 50;
+                clear();
+                drawGrid();
+                block.bottom();
+                drawArrayBlocks();
+                block.draw();
+            }
         }
         else if (event['keyCode'] === 39){
-            block.xPos += 50;
-            clear();
-            drawGrid();
-            block.bottom();
-            drawArrayBlocks();
-            block.draw();
+            if (checkSideCollisions("RIGHT")) {
+                block.xPos += 50;
+                clear();
+                drawGrid();
+                block.bottom();
+                drawArrayBlocks();
+                block.draw();
+            }
         }
         else if (event['keyCode'] === 40){
             block.yPos += 50;
@@ -101,3 +104,27 @@ function drawArrayBlocks() {
 function clear(){
     context.clearRect(0,0,450,900)
 }
+
+function checkSideCollisions(side) {
+
+    if (side === 'RIGHT') {
+
+        for (let x = 0; x < block.blocksCoordinates.length; x++) {
+            if (block.blocksCoordinates[x]['x'] === (450 - blockSize)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (side === 'LEFT') {
+
+        for (let x = 0; x < block.blocksCoordinates.length; x++) {
+            if (block.blocksCoordinates[x]['x'] === 0)  {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+

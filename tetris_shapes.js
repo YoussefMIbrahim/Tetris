@@ -46,18 +46,24 @@ function iBlock(xPos,yPos) {
 
     this.xPos = xPos;
     this.yPos = yPos;
+    this.blocksCoordinates = [];
+    this.counter = 0;
 
     this.draw = function() {
 
         context.beginPath();
         context.fillStyle = "cyan";
+        this.counter = 0;
 
         for (let x = blockSize; x <= blockSize * 4; x += blockSize) {
 
             context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
             context.strokeRect(this.xPos,this.yPos,blockSize,blockSize);
+            this.blocksCoordinates[this.counter] = ({x : this.xPos, y : this.yPos});
 
             this.yPos += blockSize;
+            this.counter++
+
         }
         this.yPos -= blockSize *4;
 
@@ -131,7 +137,7 @@ function oBLock(xPos,yPos) {
 
             this.yPos += blockSize;
         }
-        
+
         this.yPos -= blockSize * 2;
 
     };
