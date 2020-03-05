@@ -9,7 +9,7 @@ let blocksSoFar = [];
 
 
 startGame();
-setInterval(updateGame,1000);
+setInterval(updateGame,gameTime);
 
 function startGame(){
     drawGrid();
@@ -20,7 +20,6 @@ function startGame(){
 
 function buttonInputs() {
     document.addEventListener('keydown',function (event) {
-        console.log(event);
         if (event['keyCode'] === 37){
             block.xPos -= 50;
             clear();
@@ -46,6 +45,9 @@ function buttonInputs() {
             drawArrayBlocks();
             block.draw();
         }
+        else if (event['keyCode'] === 32){
+            gameTime = 1;
+        }
     })
 }
 function getNewBlock() {
@@ -53,6 +55,7 @@ function getNewBlock() {
     let randomBlock = blocks[Math.floor(Math.random() * blocks.length)];
 
     block = new randomBlock(150,0);
+    
     blocksSoFar.push(block)
 
 }
@@ -79,10 +82,11 @@ function updateGame (){
     clear();
     drawGrid();
     block.bottom();
-    drawArrayBlocks()
+    drawArrayBlocks();
     block.draw();
     block.update();
-    console.log(blocksSoFar);
+    // gameTime = 1000;
+
 
 }
 
