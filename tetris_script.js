@@ -21,6 +21,7 @@ function startGame(){
 
 function buttonInputs() {
     document.addEventListener('keydown',function (event) {
+        // console.log(event['keyCode']);
         if (event['keyCode'] === 37){
             if (checkSideCollisions("LEFT")) {
                 block.xPos -= 50;
@@ -51,6 +52,18 @@ function buttonInputs() {
         }
         else if (event['keyCode'] === 32){
             gameTime = 1;
+        }
+        else if (event['keyCode'] === 82){
+
+            blocksSoFar.forEach(function (cBlock) {
+
+                for (let x = 0; x < block.blocksCoordinates.length; x++) {
+                    console.log(`current:  ${block.blocksCoordinates[x]['y']}`);
+                    console.log(`old: ${cBlock.blocksCoordinates[x]['y']}`);
+
+                }
+            })
+            console.log(blocksSoFar)
         }
     })
 }
@@ -134,9 +147,8 @@ function checkBlockCollisions() {
         blocksSoFar.forEach(function (cBlock) {
 
             for (let x = 0; x < block.blocksCoordinates.length; x++) {
-                console.log(`current:  ${block.blocksCoordinates[x]['y']}`);
-                console.log(`old: ${cBlock.blocksCoordinates[x]['y']}`);
-                if (block.blocksCoordinates[x]['y'] - blockSize === cBlock.blocksCoordinates[x]['y']) {
+
+                if (block.blocksCoordinates[x]['y'] +blockSize === cBlock.blocksCoordinates[x]['y']) {
 
                     console.log('collision is happening ')
                 }
