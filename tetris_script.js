@@ -86,12 +86,9 @@ function updateGame (){
     drawArrayBlocks();
     block.draw();
     block.update();
+    console.log(block.blocksCoordinates)
     // gameTime = 1000;
 
-
-}
-
-function userInput(){
 
 }
 
