@@ -27,6 +27,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -90,17 +91,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="127" y="55" width="1092" height="607" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1582923650359" />
-    <state x="394" y="82" width="567" height="557" key="MultipleFileMergeDialog" timestamp="1582923650367">
+    <state x="394" y="82" width="567" height="557" key="MultipleFileMergeDialog" timestamp="1583431856554">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="394" y="82" width="567" height="557" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1582923650367" />
+    <state x="394" y="82" width="567" height="557" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1583431856554" />
     <state x="187" y="0" key="SettingsEditor" timestamp="1583018715955">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="187" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1583018715955" />
-    <state x="480" y="283" width="395" height="155" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582923583681">
+    <state x="480" y="283" width="405" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583431853282">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="480" y="283" width="395" height="155" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1582923583681" />
+    <state x="480" y="283" width="405" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1583431853282" />
   </component>
 </project>
