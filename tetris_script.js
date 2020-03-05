@@ -59,8 +59,6 @@ function getNewBlock() {
     let randomBlock = blocks[Math.floor(Math.random() * blocks.length)];
 
     block = new randomBlock(150,0);
-    
-    blocksSoFar.push(block)
 
 }
 
@@ -86,11 +84,11 @@ function updateGame (){
     clear();
     drawGrid();
     block.bottom();
+    checkBlockCollisions();
     drawArrayBlocks();
     block.draw();
     block.update();
-    console.log(block.blocksCoordinates)
-    // gameTime = 1000;
+
 
 
 }
@@ -128,3 +126,25 @@ function checkSideCollisions(side) {
     }
 }
 
+
+function checkBlockCollisions() {
+
+    if (blocksSoFar.length !== 0 ) {
+
+        blocksSoFar.forEach(function (cBlock) {
+
+            for (let x = 0; x < block.blocksCoordinates.length; x++) {
+                console.log(`current:  ${block.blocksCoordinates[x]['y']}`);
+                console.log(`old: ${cBlock.blocksCoordinates[x]['y']}`);
+                if (block.blocksCoordinates[x]['y'] - blockSize === cBlock.blocksCoordinates[x]['y']) {
+
+                    console.log('collision is happening ')
+                }
+            }
+        })
+    }
+}
+
+function placeBlockInArray() {
+    blocksSoFar.push(block)
+}
