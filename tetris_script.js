@@ -27,6 +27,7 @@ function buttonInputs() {
                 block.xPos -= 50;
                 clear();
                 drawGrid();
+                checkBlockCollisions();
                 block.bottom();
                 drawArrayBlocks();
                 block.draw();
@@ -37,6 +38,7 @@ function buttonInputs() {
                 block.xPos += 50;
                 clear();
                 drawGrid();
+                checkBlockCollisions();
                 block.bottom();
                 drawArrayBlocks();
                 block.draw();
@@ -46,6 +48,7 @@ function buttonInputs() {
             block.yPos += 50;
             clear();
             drawGrid();
+            checkBlockCollisions();
             block.bottom();
             drawArrayBlocks();
             block.draw();
@@ -148,7 +151,11 @@ function checkBlockCollisions() {
 
             for (let x = 0; x < block.blocksCoordinates.length; x++) {
 
-                if (block.blocksCoordinates[x]['y'] +blockSize === cBlock.blocksCoordinates[x]['y']) {
+                if (block.blocksCoordinates[x]['y']  < (cBlock.blocksCoordinates[x]['y'] )) {
+
+                }else {
+                    placeBlockInArray();
+                    getNewBlock();
 
                     console.log('collision is happening ')
                 }

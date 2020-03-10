@@ -37,8 +37,9 @@ function lBlock (xPos, yPos){
     };
     this.bottom = function () {
         if (this.yPos >= 750){
-            getNewBlock();
             placeBlockInArray();
+            getNewBlock();
+
         }
     }
 }
@@ -74,8 +75,8 @@ function iBlock(xPos,yPos) {
     };
     this.bottom = function () {
         if (this.yPos >= 700){
-            getNewBlock();
             placeBlockInArray();
+            getNewBlock();
         }
     }
 }
@@ -185,6 +186,7 @@ function zBlock(xPos,yPos) {
     };
     this.bottom = function () {
         if (this.yPos >= 800){
+
             getNewBlock()
         }
     }
