@@ -151,9 +151,9 @@ function checkBlockCollisions() {
 
             for (let x = 0; x < block.blocksCoordinates.length; x++) {
 
-                if (block.blocksCoordinates[x]['y']  < (cBlock.blocksCoordinates[x]['y'] )) {
+                if ((block.blocksCoordinates[x]['y']  === cBlock.blocksCoordinates[x]['y'] )  &&
+               (block.blocksCoordinates[x]['x'] === cBlock.blocksCoordinates[x]['x'] ))  {
 
-                }else {
                     placeBlockInArray();
                     getNewBlock();
 
