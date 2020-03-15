@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21c397c9-fe51-42e2-baa9-e8d9c4d88774" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetris_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/tetris_script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
       <workItem from="1582251563924" duration="875000" />
       <workItem from="1582844644313" duration="15236000" />
       <workItem from="1583084834913" duration="809000" />
-      <workItem from="1583868407075" duration="3237000" />
+      <workItem from="1583868407075" duration="6051000" />
     </task>
     <servers />
   </component>

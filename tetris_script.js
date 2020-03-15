@@ -146,13 +146,14 @@ function checkSideCollisions(side) {
 function checkBlockCollisions() {
 
     if (blocksSoFar.length !== 0 ) {
-
+        // console.log(`blocks so far: ${blocksSoFar.length}`);
+        // console.log(`coordinates in block: ${block.blocksCoordinates.length}`);
         blocksSoFar.forEach(function (cBlock) {
 
             for (let x = 0; x < block.blocksCoordinates.length; x++) {
 
-                if ((block.blocksCoordinates[x]['y']  === cBlock.blocksCoordinates[x]['y'] )  &&
-               (block.blocksCoordinates[x]['x'] === cBlock.blocksCoordinates[x]['x'] ))  {
+                if ((block.blocksCoordinates[x]['y'] === (cBlock.blocksCoordinates[x]['y'] - blockSize) )  &&
+                    (block.blocksCoordinates[x]['x'] === (cBlock.blocksCoordinates[x]['x'] - blockSize ) ))  {
 
                     placeBlockInArray();
                     getNewBlock();
