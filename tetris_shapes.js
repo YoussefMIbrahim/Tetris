@@ -2,24 +2,33 @@
 function lBlock (xPos, yPos){
     this.xPos = xPos;
     this.yPos = yPos;
+    this.blocksCoordinates = [];
+    this.counter = 0;
 
     this.draw = function() {
 
         context.beginPath();
         context.fillStyle = "blue";
+        context.strokeStyle = "black";
+        this.counter = 0;
 
 
         for (let x = blockSize; x <= blockSize * 3; x += blockSize) {
 
             context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
+            context.strokeRect(this.xPos, this.yPos, blockSize, blockSize);
+            this.blocksCoordinates[this.counter] = ({x : this.xPos, y : this.yPos});
 
             if (x === blockSize * 3) {
-                context.fillRect(this.xPos + 50, this.yPos, blockSize, blockSize)
+                context.fillRect(this.xPos + blockSize, this.yPos, blockSize, blockSize);
+                context.strokeRect(this.xPos + blockSize, this.yPos, blockSize, blockSize);
+                this.blocksCoordinates[this.counter + 1] = ({x : this.xPos + blockSize, y : this.yPos});
             }
 
             this.yPos += blockSize;
+            this.counter ++;
         }
-        context.stroke();
+
         this.yPos -= blockSize *3;
 
     };
@@ -28,7 +37,9 @@ function lBlock (xPos, yPos){
     };
     this.bottom = function () {
         if (this.yPos >= 750){
-            getNewBlock()
+            placeBlockInArray();
+            getNewBlock();
+
         }
     }
 }
@@ -37,29 +48,35 @@ function iBlock(xPos,yPos) {
 
     this.xPos = xPos;
     this.yPos = yPos;
+    this.blocksCoordinates = [];
+    this.counter = 0;
 
     this.draw = function() {
 
         context.beginPath();
         context.fillStyle = "cyan";
+        this.counter = 0;
 
         for (let x = blockSize; x <= blockSize * 4; x += blockSize) {
 
             context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
+            context.strokeRect(this.xPos,this.yPos,blockSize,blockSize);
+            this.blocksCoordinates[this.counter] = ({x : this.xPos, y : this.yPos});
 
             this.yPos += blockSize;
-        }
-        context.stroke();
-        this.yPos -= blockSize *4;
+            this.counter++
 
+        }
+        this.yPos -= blockSize *4;
 
     };
     this.update = function () {
         this.yPos += blockSize;
-    }
+    };
     this.bottom = function () {
         if (this.yPos >= 700){
-            getNewBlock()
+            placeBlockInArray();
+            getNewBlock();
         }
     }
 }
@@ -78,22 +95,24 @@ function tBlock(xPos,yPos) {
         for (let x = blockSize; x <= blockSize * 3; x += blockSize){
 
             context.fillRect(this.xPos,this.yPos,blockSize,blockSize);
+            context.strokeRect(this.xPos,this.yPos,blockSize,blockSize);
+
 
             if (x === blockSize * 2){
-                context.fillRect(this.xPos,this.yPos + blockSize,blockSize,blockSize)
+                context.fillRect(this.xPos,this.yPos + blockSize,blockSize,blockSize);
+                context.strokeRect(this.xPos,this.yPos + blockSize,blockSize,blockSize);
             }
 
             this.xPos += blockSize;
 
         }
-        context.stroke();
 
         this.xPos -= blockSize *3;
 
     };
     this.update = function () {
         this.yPos += blockSize;
-    }
+    };
     this.bottom = function () {
         if (this.yPos >= 800){
             console.log(this.y);
@@ -115,11 +134,13 @@ function oBLock(xPos,yPos) {
         for (let x = blockSize; x <= blockSize * 2; x += blockSize) {
 
             context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
+            context.strokeRect(this.xPos, this.yPos, blockSize, blockSize);
             context.fillRect(this.xPos + blockSize, this.yPos, blockSize, blockSize);
+            context.strokeRect(this.xPos + blockSize, this.yPos, blockSize, blockSize);
 
             this.yPos += blockSize;
         }
-        context.stroke();
+
         this.yPos -= blockSize * 2;
 
     };
@@ -127,7 +148,7 @@ function oBLock(xPos,yPos) {
         if (this.yPos >= 800){
             getNewBlock()
         }
-    }
+    };
     this.update = function () {
         this.yPos += blockSize;
     }
@@ -146,6 +167,7 @@ function zBlock(xPos,yPos) {
         for (let x = blockSize; x <= blockSize * 4; x += blockSize) {
 
             context.fillRect(this.xPos, this.yPos, blockSize, blockSize);
+            context.strokeRect(this.xPos, this.yPos, blockSize, blockSize);
 
             if (x === blockSize * 2) {
                 this.yPos += blockSize;
@@ -155,7 +177,6 @@ function zBlock(xPos,yPos) {
                 this.xPos += blockSize;
             }
         }
-        context.stroke();
         this.yPos -= blockSize;
         this.xPos -= blockSize * 3;
 
@@ -165,6 +186,7 @@ function zBlock(xPos,yPos) {
     };
     this.bottom = function () {
         if (this.yPos >= 800){
+
             getNewBlock()
         }
     }
